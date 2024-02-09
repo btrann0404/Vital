@@ -1,0 +1,9 @@
+dependencies: \
+  /Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseAuth.build/module.modulemap \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRUserInfoImpl.m \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/User/FIRUserInfoImpl.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRUserInfo.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRGetAccountInfoResponse.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRPCResponse.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/FIRAuthProtoMFAEnrollment.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/Proto/FIRAuthProto.h

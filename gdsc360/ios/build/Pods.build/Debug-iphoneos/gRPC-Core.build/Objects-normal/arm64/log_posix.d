@@ -1,0 +1,41 @@
+dependencies: \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/src/core/lib/gpr/log_posix.cc \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/Target\ Support\ Files/gRPC-Core/gRPC-Core-prefix.pch \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/include/grpc/support/port_platform.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/include/grpc/impl/codegen/port_platform.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/strings/str_format.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/strings/internal/str_format/arg.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/port.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/attributes.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/config.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/options.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/policy_checks.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/optimization.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/meta/type_traits.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/numeric/int128.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/macros.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/numeric/int128_have_intrinsic.inc \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/strings/internal/str_format/extension.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/strings/internal/str_format/output.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/strings/string_view.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/internal/throw_delegate.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/strings/internal/str_format/bind.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/strings/internal/str_format/checker.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/strings/internal/str_format/parser.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/types/span.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/types/internal/span.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/algorithm/algorithm.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/utility/utility.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/internal/inline_variable.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/internal/identity.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/base/internal/invoke.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/include/grpc/support/alloc.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/include/grpc/support/log.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/include/grpc/impl/codegen/log.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/include/grpc/support/time.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/include/grpc/impl/codegen/gpr_types.h \
+  /Users/brandon/Documents/Vital/gdsc360/ios/Pods/gRPC-Core/src/core/lib/gprpp/examine_stack.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/types/optional.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/types/bad_optional_access.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/types/internal/optional.h \
+  /Users/brandon/Documents/Vital/gdsc360/build/ios/Debug-iphoneos/abseil/absl.framework/Headers/memory/memory.h
