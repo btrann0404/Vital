@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc360/components/SpeechButton.dart';
 import 'package:gdsc360/pages/HealthPage.dart';
@@ -20,10 +22,13 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final Auth _auth = Auth();
   late int _selectedIndex = 0;
 
   final LocationTrackingService locationTrackingService =
       LocationTrackingService();
+
+  get _pages => _getPages();
 
   @override
   void initState() {
@@ -38,12 +43,136 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
-  final List<Widget> _pages = [
-    const HomePage(),
-    const Healthpage(),
-    const MessagePage(),
-    const MapPage(),
-  ];
+  void _showAddPartnerDialog() {
+    final TextEditingController _emailController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Add Your Partner'),
+          content: TextField(
+            controller: _emailController,
+            decoration: InputDecoration(hintText: "Partner's Email"),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text('Submit'),
+              onPressed: () async {
+                print('Partner email: ${_emailController.text}');
+                String partnerEmail = _emailController.text;
+                //messes up the app for some reasons cause of mount of smt???
+                // Navigator.of(context).pop();
+
+                if (!mounted) return;
+
+                // i should probably move this
+                var partnerDoc = await FirebaseFirestore.instance
+                    .collection('users')
+                    .where('email', isEqualTo: partnerEmail)
+                    .get();
+
+                if (partnerDoc.docs.isNotEmpty) {
+                  var partnerData = partnerDoc.docs.first.data();
+                  var partnerID = partnerDoc.docs.first.id;
+                  var partnerRole = partnerData['role'];
+                  var partnerHasPartner = partnerData['partnerID'] != null;
+
+                  // Fetch current user's data
+                  var currentUser = FirebaseAuth.instance.currentUser;
+                  var currentUserDoc = await FirebaseFirestore.instance
+                      .collection('users')
+                      .doc(currentUser!.uid)
+                      .get();
+                  var currentUserData = currentUserDoc.data();
+                  var currentUserRole = currentUserData!['role'];
+                  var currentUserHasPartner =
+                      currentUserData['partnerID'] != null;
+
+                  if (!partnerHasPartner &&
+                      !currentUserHasPartner &&
+                      partnerRole != currentUserRole) {
+                    // Update both users to set each other as partners
+                    await FirebaseFirestore.instance
+                        .collection('users')
+                        .doc(currentUser.uid)
+                        .update({'partnerID': partnerID});
+                    await FirebaseFirestore.instance
+                        .collection('users')
+                        .doc(partnerID)
+                        .update({'partnerID': currentUser.uid});
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Partner added successfully.")));
+                  } else {
+                    // Conditions not met, show an error message
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content:
+                            Text("Cannot add partner. Check conditions.")));
+                  }
+                } else {
+                  // Partner email not found, show an error message
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Partner email not found.")));
+                }
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<List<Widget>> _getPages() async {
+    String currUserID = _auth.getCurrentUserUid().toString();
+    Map<String, dynamic>? currentUserInfo = await _auth.getUserData(currUserID);
+
+    // Check if the currentUserInfo contains a partnerID
+    bool hasPartner =
+        currentUserInfo != null && currentUserInfo["partnerID"] != null;
+
+    // If there is no partnerID, return a list of widgets that show an error/prompt for adding a partner
+    if (!hasPartner) {
+      // This widget will be shown in place of all other pages when there's no partnerID
+      Widget errorPage = Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('No partner set. Please add a partner to use this feature.'),
+              ElevatedButton(
+                onPressed: () {
+                  _showAddPartnerDialog();
+                },
+                child: Text('Add Partner'),
+              ),
+            ],
+          ),
+        ),
+      );
+
+      // Return the errorPage for all your app's main navigation points
+      return List<Widget>.filled(4, errorPage, growable: false);
+    }
+
+    // If there is a partnerID, return the list of pages as normal
+    return [
+      const HomePage(),
+      const Healthpage(),
+      MessagePage(
+        receiverUserID: currentUserInfo["partnerID"].toString(),
+        receiverUserEmail: currentUserInfo["email"]
+            .toString(), // Assuming you want to pass the email of the current user, adjust as needed
+      ),
+      const MapPage(),
+    ];
+  }
 
   final List<String> _pagetitles = [
     "Home Dashboard",
@@ -102,7 +231,23 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
       drawer: SlideBar(),
-      body: _pages[_selectedIndex],
+      body: FutureBuilder<List<Widget>>(
+        future:
+            _getPages(), // Assuming this is your method that returns Future<List<Widget>>
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else if (snapshot.hasData) {
+            // Now you can safely access the pages
+            return snapshot.data![
+                _selectedIndex]; // Use the index to access the correct page
+          } else {
+            return Center(child: Text('No data available'));
+          }
+        },
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: _selectedIndex !=
               2 // Assuming 'Messages' is at index 2

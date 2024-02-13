@@ -90,6 +90,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => MainPage(pageIndex: 1)));
     } else if (_text.contains("message")) {
+      // need to fix this
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => MainPage(pageIndex: 2)));
     } else if (_text.contains("home")) {
