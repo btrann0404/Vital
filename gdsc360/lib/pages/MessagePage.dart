@@ -55,8 +55,8 @@ class _MessagePageState extends State<MessagePage> {
               snapshot.data!; // Now you have your Map<String, dynamic>
           return Scaffold(
             appBar: AppBar(
-              title: Text(
-                  receiverData["name"] ?? "User"), // Use the data as needed
+              title: Text(receiverData["name"] ?? "User"),
+              automaticallyImplyLeading: false, // Use the data as needed
             ),
             body: Column(
               children: [

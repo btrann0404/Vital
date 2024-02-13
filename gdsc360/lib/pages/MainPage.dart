@@ -108,6 +108,11 @@ class _MainPageState extends State<MainPage> {
                         .doc(partnerID)
                         .update({'partnerID': currentUser.uid});
 
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MainPage(pageIndex: 0)));
+
                     ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("Partner added successfully.")));
                   } else {
