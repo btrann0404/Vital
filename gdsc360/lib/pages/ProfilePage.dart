@@ -113,15 +113,6 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                     isEditMode
                         ? const SizedBox.shrink()
-                        // ? Padding(
-                        //     padding: const EdgeInsets.all(8.0),
-                        //     child: TextFormField(
-                        //       controller: _emailController,
-                        //       decoration: InputDecoration(
-                        //           labelText: "Email", hintText: "Email"),
-                        //       style: TextStyle(fontSize: 18),
-                        //     ),
-                        //   )
                         : Text(
                             "Email: ${userData['email'] ?? "Email not available"}",
                             style: TextStyle(
@@ -174,6 +165,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             style: TextStyle(
                                 fontSize: 18, color: Colors.grey[700]),
                           ),
+                    isEditMode
+                        ? ElevatedButton(
+                            onPressed: () => {},
+                            child: Text("Cancel Partnership"))
+                        : const SizedBox.shrink(),
                     SizedBox(height: 20),
                     isEditMode
                         ? Row(

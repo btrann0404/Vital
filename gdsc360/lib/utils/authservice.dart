@@ -88,7 +88,7 @@ class Auth {
   String? getCurrentUserUid() {
     //get the id of the current user
     User? currentUser = _auth.currentUser;
-    return currentUser?.uid;
+    return currentUser?.uid.toString();
   }
 
   Future<Map<String, dynamic>?> getUserData(String uid) async {

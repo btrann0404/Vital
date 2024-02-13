@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:gdsc360/utils/authservice.dart';
@@ -12,15 +14,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Future<String> fetchData() async {
     try {
-      final response = await http.get(Uri.parse('http://0000:8000/'));
+      final response = await http.get(Uri.parse('http://localhost:8000/'));
       if (response.statusCode == 200) {
         return response.body;
       } else {
         return "Error: Server responded with status code ${response.statusCode}";
       }
     } catch (e) {
-      // print(e);
-      // return "Error: No Response From Server";
       return "Embrace today with positivity and determination!"; //placeholder
     }
   }
@@ -72,22 +72,6 @@ class _HomePageState extends State<HomePage> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                   overflow: TextOverflow.ellipsis,
-                                ),
-                                FutureBuilder<String>(
-                                  future: fetchData(),
-                                  builder: (context, asyncSnapshot) {
-                                    if (asyncSnapshot.connectionState ==
-                                        ConnectionState.waiting) {
-                                      return const CircularProgressIndicator();
-                                    } else if (asyncSnapshot.hasError) {
-                                      return Text(
-                                          "Error: ${asyncSnapshot.error}");
-                                    } else if (asyncSnapshot.hasData) {
-                                      return Text(asyncSnapshot.data!);
-                                    } else {
-                                      return const Text("No data from server");
-                                    }
-                                  },
                                 ),
                               ],
                             );

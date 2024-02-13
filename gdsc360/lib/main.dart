@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
         '/mainpage': (context) => const MainPage(),
         '/homepage': (context) => const HomePage(),
         '/speech': (context) => SpeechScreen(),
-        '/messagepage': (context) => const MessagePage(),
+        // '/messagepage': (context) => const MessagePage(),
         '/healthpage': (context) => const Healthpage(),
         '/mappage': (context) => const MapPage(),
         '/rolesignup': (context) => const RoleSignup(),
