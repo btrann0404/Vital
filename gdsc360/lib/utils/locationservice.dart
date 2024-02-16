@@ -7,8 +7,9 @@ import 'package:geolocator/geolocator.dart';
 class LocationTrackingService {
   StreamSubscription<Position>? locationSubscription;
   final _locationController = StreamController<Position>.broadcast();
-  final int updateInterval = 5; // seconds
+  final int updateInterval = 5;
   Position? _lastPosition;
+  bool isTracking = false;
 
   Stream<Position> get locationStream => _locationController.stream;
 
@@ -16,7 +17,6 @@ class LocationTrackingService {
     // Start periodic updates when instance is created
     Timer.periodic(Duration(seconds: updateInterval), (timer) {
       if (_lastPosition != null) {
-        // Save the last known location to Firestore
         saveLocationToFirestore(_lastPosition!);
       }
     });
@@ -45,6 +45,8 @@ class LocationTrackingService {
       // Store the latest location data
       _lastPosition = position;
     });
+
+    isTracking = true;
   }
 
   void stopTracking() {

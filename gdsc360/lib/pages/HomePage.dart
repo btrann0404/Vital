@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gdsc360/components/homewidget.dart';
+import 'package:gdsc360/pages/MainPage.dart';
+import 'package:gdsc360/pages/Speech.dart';
 import 'package:http/http.dart' as http;
 import 'package:gdsc360/utils/authservice.dart';
 
@@ -47,7 +50,8 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -83,7 +87,73 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                // Additional Widgets can be added here
+                Center(
+                  child: Wrap(
+                    spacing: 30.0,
+                    runSpacing: 30.0,
+                    children: [
+                      HomeWidget(
+                        text: 'Health',
+                        backgroundColor: Colors.red[300]!,
+                        icon: Icons.favorite,
+                        iconColor: Colors.pink,
+                        textColor: Colors.white,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      MainPage(pageIndex: 1)));
+                          print('Health Widget tapped!');
+                        },
+                      ),
+                      HomeWidget(
+                        text: 'Messages',
+                        backgroundColor: Colors.blue[300]!,
+                        icon: Icons.message,
+                        iconColor: Colors.white,
+                        textColor: Colors.white,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      MainPage(pageIndex: 2)));
+                          print('Message Widget tapped!');
+                        },
+                      ),
+                      HomeWidget(
+                        text: 'Speech Visual',
+                        backgroundColor: Colors.grey[400]!,
+                        icon: Icons.mic,
+                        iconColor: Colors.black,
+                        textColor: Colors.black,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SpeechScreen()));
+                          print('Speech Widget tapped!');
+                        },
+                      ),
+                      HomeWidget(
+                        text: 'Location',
+                        backgroundColor: Colors.green[300]!,
+                        icon: Icons.map,
+                        iconColor: Colors.white,
+                        textColor: Colors.white,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      MainPage(pageIndex: 3)));
+                          print('Map Widget tapped!');
+                        },
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),

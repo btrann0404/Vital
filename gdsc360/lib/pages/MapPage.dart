@@ -51,7 +51,7 @@ class _MapPageState extends State<MapPage> {
         Position position = Position(
           latitude: data['latitude'],
           longitude: data['longitude'],
-          timestamp: DateTime.now(), // Placeholder for actual timestamp
+          timestamp: DateTime.now(),
           accuracy: 0.0, // Placeholder values
           altitude: 0.0,
           heading: 0.0,
@@ -97,6 +97,8 @@ class _MapPageState extends State<MapPage> {
           target: _currentLatLng,
           zoom: currentZoomLevel,
         ),
+        myLocationEnabled: true,
+        myLocationButtonEnabled: true,
         markers: {
           Marker(
             markerId: const MarkerId("partner"),

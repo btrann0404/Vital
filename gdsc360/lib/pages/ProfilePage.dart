@@ -71,8 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
             return AlertDialog(
               title: Text('Are You Sure You Want To Cancel Your Partnership?'),
               content: Row(
-                mainAxisSize:
-                    MainAxisSize.min, // Ensures the row doesn't overflow
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   ElevatedButton(
                       onPressed: () async {
@@ -111,8 +110,7 @@ class _ProfilePageState extends State<ProfilePage> {
           },
         );
       } else {
-        // Handle case where there is no partnerID or userData is not as expected
-        // This could involve showing an error message or simply doing nothing
+        print("Error for Profile Editing");
       }
     }
   }
