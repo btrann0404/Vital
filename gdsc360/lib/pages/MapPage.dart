@@ -19,7 +19,6 @@ class _MapPageState extends State<MapPage> {
   String _address = "Location Tracker"; // Initial AppBar title
   LatLng _currentLatLng = LatLng(0, 0); // Default LatLng
 
-  // Assuming AuthService provides a Future<String?> to get the current user's UID
   Auth auth = Auth();
 
   @override
@@ -31,7 +30,6 @@ class _MapPageState extends State<MapPage> {
   Future<void> _fetchInitialLocation() async {
     String? uid = await auth.getCurrentUserUid();
     if (uid != null) {
-      // Assuming AuthService's getUserData now correctly awaits and returns a Future<Map<String, dynamic>>
       Map<String, dynamic>? userData = await auth.getUserData(uid);
       String? partnerId = userData?['partnerID'];
       if (partnerId != null) {

@@ -22,7 +22,7 @@ class Auth {
           password: password.trim(),
         );
         await addUserData(userCredential);
-        _locationTrackingService.startTracking();
+        // _locationTrackingService.startTracking();
       } else {
         throw FirebaseAuthException(
           code: 'password-mismatch',
