@@ -1,0 +1,18 @@
+"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/DocumentID.swift":
+  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentID.swiftdeps"
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentID.dia"
+  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentID.o"
+  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentID.swiftconstvalues"
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentID.d"
+"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/DocumentReference+Codable.swift":
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentReference+Codable.dia"
+  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentReference+Codable.o"
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentReference+Codable.d"
+  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentReference+Codable.swiftconstvalues"
+  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/DocumentReference+Codable.swiftdeps"
+"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/CollectionReference+WriteEncodable.swift":
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/CollectionReference+WriteEncodable.d"
+  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/CollectionReference+WriteEncodable.swiftconstvalues"
+  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/CollectionReference+WriteEncodable.o"
+  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/CollectionReference+WriteEncodable.swiftdeps"
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/CollectionReference+WriteEncodable.dia"

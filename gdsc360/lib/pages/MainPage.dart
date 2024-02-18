@@ -33,7 +33,9 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    locationTrackingService.startTracking();
+    if (!locationTrackingService.isTracking) {
+      locationTrackingService.startTracking();
+    }
     _selectedIndex = widget.pageIndex ?? 0; //default to 0
   }
 
@@ -108,6 +110,11 @@ class _MainPageState extends State<MainPage> {
                         .doc(partnerID)
                         .update({'partnerID': currentUser.uid});
 
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MainPage(pageIndex: 0)));
+
                     ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("Partner added successfully.")));
                   } else {
@@ -165,11 +172,7 @@ class _MainPageState extends State<MainPage> {
     return [
       const HomePage(),
       const Healthpage(),
-      MessagePage(
-        receiverUserID: currentUserInfo["partnerID"].toString(),
-        receiverUserEmail: currentUserInfo["email"]
-            .toString(), // Assuming you want to pass the email of the current user, adjust as needed
-      ),
+      MessagePage(),
       const MapPage(),
     ];
   }

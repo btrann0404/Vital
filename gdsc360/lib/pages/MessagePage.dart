@@ -5,12 +5,7 @@ import 'package:gdsc360/utils/authservice.dart'; // Your custom Auth service
 import 'package:gdsc360/utils/chatservice.dart'; // Your custom Chat service
 
 class MessagePage extends StatefulWidget {
-  final String receiverUserEmail;
-  final String receiverUserID;
-  const MessagePage(
-      {super.key,
-      required this.receiverUserID,
-      required this.receiverUserEmail});
+  const MessagePage({super.key});
 
   @override
   State<MessagePage> createState() => _MessagePageState();
@@ -20,68 +15,70 @@ class _MessagePageState extends State<MessagePage> {
   final TextEditingController _messageController = TextEditingController();
   final ChatService _chatService = ChatService();
   final Auth _auth = Auth();
+  late Future<Map<String, dynamic>?> partnerDataFuture;
 
-  void sendMessage() async {
+  @override
+  void initState() {
+    super.initState();
+    partnerDataFuture = _fetchPartnerData();
+  }
+
+  Future<Map<String, dynamic>?> _fetchPartnerData() async {
+    String currUserID = _auth.getCurrentUserUid().toString();
+    Map<String, dynamic>? currentUserInfo = await _auth.getUserData(currUserID);
+    String partnerID = currentUserInfo?["partnerID"];
+    return await _auth.getUserData(partnerID);
+  }
+
+  void sendMessage(String receiverUserID) async {
     if (_messageController.text.isNotEmpty) {
-      await _chatService.sendMessage(
-          widget.receiverUserID, _messageController.text);
+      await _chatService.sendMessage(receiverUserID, _messageController.text);
       _messageController.clear();
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    // Use FutureBuilder to work with the Future returned by getUserData
     return FutureBuilder<Map<String, dynamic>?>(
-      future: _auth.getUserData(
-          widget.receiverUserID), // The Future that you are waiting for
+      future: partnerDataFuture,
       builder: (context, snapshot) {
-        // Check the connection state of the Future
         if (snapshot.connectionState == ConnectionState.waiting) {
-          // Return a loading indicator while waiting for the Future to complete
           return Scaffold(
-            appBar: AppBar(),
-            body: Center(child: CircularProgressIndicator()),
-          );
+              appBar: AppBar(),
+              body: Center(child: CircularProgressIndicator()));
         } else if (snapshot.hasError) {
-          // If the Future completes with an error, return an error widget
           return Scaffold(
-            appBar: AppBar(),
-            body: Center(child: Text("Error loading user data")),
-          );
+              appBar: AppBar(),
+              body: Center(child: Text("Error loading partner data")));
         } else if (snapshot.hasData) {
-          // If the Future completes with data, use the data to build your widget
-          var receiverData =
-              snapshot.data!; // Now you have your Map<String, dynamic>
+          var partnerData = snapshot.data!;
           return Scaffold(
             appBar: AppBar(
-              title: Text(
-                  receiverData["name"] ?? "User"), // Use the data as needed
+              title: Text(partnerData["name"] ?? "Partner"),
+              automaticallyImplyLeading: false,
             ),
             body: Column(
               children: [
                 Expanded(
-                  child: _buildMessageList(),
+                  child: _buildMessageList(partnerData["userID"]),
                 ),
-                _buildMessageInput(),
+                _buildMessageInput(partnerData["userID"]),
               ],
             ),
           );
         } else {
-          // Handle the case where you have no data
           return Scaffold(
-            appBar: AppBar(),
-            body: Center(child: Text("No user data available")),
-          );
+              appBar: AppBar(),
+              body: Center(child: Text("No partner data available")));
         }
       },
     );
   }
 
-  Widget _buildMessageList() {
+  Widget _buildMessageList(String receiverUserID) {
     return StreamBuilder<QuerySnapshot>(
       stream: _chatService.getMessages(
-          widget.receiverUserID, _auth.getCurrentUserUid().toString()),
+          receiverUserID, _auth.getCurrentUserUid().toString()),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
@@ -102,7 +99,6 @@ class _MessagePageState extends State<MessagePage> {
 
   Widget _buildMessageItem(DocumentSnapshot document) {
     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-
     var alignment = (data["senderID"] == _auth.getCurrentUserUid())
         ? Alignment.centerRight
         : Alignment.centerLeft;
@@ -132,7 +128,7 @@ class _MessagePageState extends State<MessagePage> {
     );
   }
 
-  Widget _buildMessageInput() {
+  Widget _buildMessageInput(String receiverUserID) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -142,18 +138,14 @@ class _MessagePageState extends State<MessagePage> {
               controller: _messageController,
               decoration: InputDecoration(
                 hintText: "Type a message...",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
               ),
             ),
           ),
           IconButton(
-            icon: Icon(Icons.send,
-                color: Colors.blue), // Adjusted icon color for visibility
-            onPressed: () {
-              sendMessage();
-            },
+            icon: Icon(Icons.send, color: Colors.blue),
+            onPressed: () => sendMessage(receiverUserID),
           ),
         ],
       ),

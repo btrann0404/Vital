@@ -1,18 +1,18 @@
-"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/ExplicitNull.swift":
-  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.swiftdeps"
-  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.d"
-  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.swiftconstvalues"
-  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.dia"
-  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.o"
-"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/EncoderDecoder.swift":
-  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.swiftconstvalues"
-  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.swiftdeps"
-  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.d"
-  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.o"
-  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.dia"
 "/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/FieldValue+Encodable.swift":
-  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FieldValue+Encodable.dia"
   object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FieldValue+Encodable.o"
   swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FieldValue+Encodable.swiftdeps"
-  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FieldValue+Encodable.d"
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FieldValue+Encodable.dia"
   const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FieldValue+Encodable.swiftconstvalues"
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FieldValue+Encodable.d"
+"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/ExplicitNull.swift":
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.dia"
+  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.swiftconstvalues"
+  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.swiftdeps"
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.d"
+  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ExplicitNull.o"
+"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/EncoderDecoder.swift":
+  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.o"
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.dia"
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.d"
+  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.swiftconstvalues"
+  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/EncoderDecoder.swiftdeps"

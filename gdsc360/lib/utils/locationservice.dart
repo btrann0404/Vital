@@ -7,8 +7,9 @@ import 'package:geolocator/geolocator.dart';
 class LocationTrackingService {
   StreamSubscription<Position>? locationSubscription;
   final _locationController = StreamController<Position>.broadcast();
-  final int updateInterval = 5; // seconds
+  final int updateInterval = 5;
   Position? _lastPosition;
+  bool isTracking = false;
 
   Stream<Position> get locationStream => _locationController.stream;
 
@@ -16,7 +17,6 @@ class LocationTrackingService {
     // Start periodic updates when instance is created
     Timer.periodic(Duration(seconds: updateInterval), (timer) {
       if (_lastPosition != null) {
-        // Save the last known location to Firestore
         saveLocationToFirestore(_lastPosition!);
       }
     });
@@ -45,6 +45,8 @@ class LocationTrackingService {
       // Store the latest location data
       _lastPosition = position;
     });
+
+    isTracking = true;
   }
 
   void stopTracking() {
@@ -82,5 +84,40 @@ class LocationTrackingService {
   // Helper function to format the address from Placemark
   String _formatAddress(Placemark placemark) {
     return '${placemark.street}, ${placemark.locality}, ${placemark.postalCode}, ${placemark.country}';
+  }
+
+  Stream<Position> getPartnerLocationStream(String partnerId) {
+    return FirebaseFirestore.instance
+        .collection('users_location')
+        .doc(partnerId)
+        .snapshots()
+        .map((snapshot) {
+      if (!snapshot.exists) {
+        return Position(
+            latitude: 0.0,
+            longitude: 0.0,
+            timestamp: DateTime.now(),
+            accuracy: 0.0,
+            altitude: 0.0,
+            heading: 0.0,
+            speed: 0.0,
+            speedAccuracy: 0.0,
+            altitudeAccuracy: 0,
+            headingAccuracy:
+                0); // Return a default position if the document does not exist
+      }
+      var data = snapshot.data();
+      return Position(
+        latitude: data!['latitude'],
+        longitude: data['longitude'],
+        timestamp: DateTime
+            .now(), // Firestore timestamps are not directly compatible with Position timestamp
+        accuracy: 0.0, // Optional: Adjust these fields as necessary
+        altitude: 0.0,
+        heading: 0.0,
+        speed: 0.0,
+        speedAccuracy: 0.0, altitudeAccuracy: 0, headingAccuracy: 0,
+      );
+    });
   }
 }

@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:gdsc360/pages/MainPage.dart';
 import 'package:gdsc360/utils/authservice.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -53,17 +55,64 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
-  Widget buildTextField(String label, TextEditingController controller) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: TextFormField(
-        controller: controller,
-        decoration: InputDecoration(
-          labelText: label,
-          border: OutlineInputBorder(),
-        ),
-      ),
-    );
+  void _showCancelPartnerConfirmation() async {
+    final TextEditingController _emailController = TextEditingController();
+
+    // Assuming auth.getCurrentUserUid() returns a Future or a direct value. Adjust accordingly.
+    String currUID = auth.getCurrentUserUid().toString();
+    Map<String, dynamic>? userData = await auth.getUserData(currUID);
+
+    if (userData != null && userData.containsKey('partnerID')) {
+      String? partnerID = userData['partnerID'];
+      if (partnerID != null && partnerID.isNotEmpty) {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Are You Sure You Want To Cancel Your Partnership?'),
+              content: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ElevatedButton(
+                      onPressed: () async {
+                        // Perfrorm Firestore updates
+                        await FirebaseFirestore.instance
+                            .collection('users')
+                            .doc(partnerID)
+                            .update({'partnerID': null});
+                        await FirebaseFirestore.instance
+                            .collection('users')
+                            .doc(currUID)
+                            .update({'partnerID': null});
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MainPage(pageIndex: 0)));
+                      },
+                      child: Text("Yes")),
+                  SizedBox(width: 8), // Space between the buttons
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text("No"))
+                ],
+              ),
+              actions: <Widget>[
+                TextButton(
+                  child: Text('Cancel'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      } else {
+        print("Error for Profile Editing");
+      }
+    }
   }
 
   @override
@@ -167,7 +216,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                     isEditMode
                         ? ElevatedButton(
-                            onPressed: () => {},
+                            onPressed: () => {_showCancelPartnerConfirmation()},
                             child: Text("Cancel Partnership"))
                         : const SizedBox.shrink(),
                     SizedBox(height: 20),
