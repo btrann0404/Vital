@@ -18,7 +18,7 @@ Vital is an all-purpose health app designed to empower guardians to monitor thei
 
 ## Contact
 
-- Andrew Ly - [@andrewly](https://github.com/andrewly)
-- Brandon Tran - [@brandontran](https://github.com/brandontran)
+- Andrew Ly - [@andrewly](https://github.com/andyly13)
+- Brandon Tran - [@brandontran](https://github.com/btrann0404)
 
 Feel free to reach out to us with any questions or feedback!
