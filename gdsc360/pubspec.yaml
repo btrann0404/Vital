@@ -42,7 +42,7 @@ dependencies:
   location: ^5.0.3
   flutter_svg: ^2.0.9
   geocoding: ^2.1.1
-  geolocator: ^10.1.0
+  geolocator: ^11.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -70,6 +70,10 @@ flutter:
   assets:
     - lib/assets/google-logo.png
     - lib/assets/apple-log.png
+    - lib/assets/heartrate.png
+    - lib/assets/bloodsugar.png
+    - lib/assets/steps_chart.png
+
 
   uses-material-design: true
 
