@@ -1,0 +1,18 @@
+"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/EncoderDecoder.swift":
+  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/EncoderDecoder.swiftconstvalues"
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/EncoderDecoder.dia"
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/EncoderDecoder.d"
+  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/EncoderDecoder.swiftdeps"
+  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/EncoderDecoder.o"
+"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/ExplicitNull.swift":
+  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/ExplicitNull.o"
+  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/ExplicitNull.swiftconstvalues"
+  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/ExplicitNull.swiftdeps"
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/ExplicitNull.d"
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/ExplicitNull.dia"
+"/Users/brandon/Documents/Vital/gdsc360/ios/Pods/FirebaseFirestore/Firestore/Swift/Source/Codable/FieldValue+Encodable.swift":
+  object: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/FieldValue+Encodable.o"
+  dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/FieldValue+Encodable.d"
+  const-values: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/FieldValue+Encodable.swiftconstvalues"
+  swift-dependencies: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/FieldValue+Encodable.swiftdeps"
+  diagnostics: "/Users/brandon/Documents/Vital/gdsc360/ios/build/Pods.build/Debug-iphoneos/FirebaseFirestore.build/Objects-normal/arm64/FieldValue+Encodable.dia"

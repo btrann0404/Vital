@@ -1,0 +1,58 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "data": {
+          "global": [
+            "_$s3Try21tryExceptionErrorCodeSivau",
+            "_$s3Try20tryExceptionErrorKeySSvp",
+            "_$s3Try4trapyyyycKF",
+            "_$s3Try14tryErrorDomainSSvp",
+            "_Swift50Overrides",
+            "_$s3Try20tryExceptionErrorKeySSvau",
+            "_Swift51Overrides",
+            "_$s3Try14tryErrorDomainSSvau",
+            "_TryVersionNumber",
+            "_$s3Try21tryExceptionErrorCodeSivp",
+            "_TryVersionString"
+          ],
+          "objc_class": [
+            "WBTry",
+            "PodsDummy_Try"
+          ]
+        },
+        "text": {
+          "global": [
+            "__ZN5swift34swift50override_conformsToProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEPFPKNS_18TargetWitnessTableIS1_EES4_S8_E",
+            "__Z34_swiftoverride_class_getSuperclassPKN5swift14TargetMetadataINS_9InProcessEEE",
+            "__ZN5swift39swift51override_conformsToSwiftProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEN7__swift9__runtime4llvm9StringRefEPFPKNS_35TargetProtocolConformanceDescriptorIS1_EES4_S8_SC_E"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "@rpath/Try.framework/Try"
+      }
+    ],
+    "swift_abi": [
+      {
+        "abi": 7
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "9",
+        "target": "arm64-ios"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}
